@@ -1,0 +1,14 @@
+applications:
+- name: episodic-events
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  routes:
+  - route: episodic-events-salvational-vulcanism.cfapps.io
+  services:
+  - episodic-events-db
+  - episodic-queue
+  - service-registry
+  - config-server
+  stack: cflinuxfs2
+  path: "./build/libs/episodic-events-0.0.1-SNAPSHOT.jar"
